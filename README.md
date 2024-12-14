@@ -20,7 +20,7 @@ A robust lane detection and navigation system that utilizes LiDAR point cloud da
 7. Autonomous vehicle control
 
 ## Demo Video
-[Watch our system in action](https://www.youtube.com/watch?v=cCTi2zFftlY)
+[Watch our system in action]([https://www.youtube.com/watch?v=cCTi2zFftlY](https://youtu.be/ihDA-dlf1ts))
 
 The video demonstrates:
 - Real-time lane detection using LiDAR point clouds
