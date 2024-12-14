@@ -1,34 +1,29 @@
+# LiDAR Based Lane Navigation System
 
-### Start-Up Sequence
+A robust lane detection and navigation system that utilizes LiDAR point cloud data instead of traditional camera-based approaches. Our system provides reliable lane detection and autonomous navigation capabilities that are immune to challenging lighting conditions and adverse weather.
 
-# First drive the car outside at the point away from the building, and remain static for 30 seconds
+## Key Features
+- LiDAR-based lane detection using Point Transformer V3
+- Robust point cloud registration using KISS-ICP
+- Buffered mapping for increased robustness and blind zone handling
+- Real-time performance with optimized preprocessing pipeline
+- Works reliably in various lighting conditions including night-time
+- Integration with GEM E2 and E4 autonomous vehicle platform
 
-# Initialize All Sensors
-$ cd demo_ws
-$ source devel/setup.bash
-$ roslaunch basic_launch sensor_init.launch
+## Technical Pipeline
+1. LiDAR point cloud acquisition
+2. Point cloud preprocessing and filtering
+3. KISS-ICP odometry for precise localization
+4. Point Transformer V3 inference for lane detection
+5. Frame matching and buffered mapping
+6. Lane detection and waypoint generation
+7. Autonomous vehicle control
 
-# Visulaize the GPS
-$ source devel/setup.bash
-$ roslaunch basic_launch visualization.launch
+## Demo Video
+[Watch our system in action](https://www.youtube.com/watch?v=cCTi2zFftlY)
 
-# Enable Joystick Control
-$ source devel/setup.bash
-$ roslaunch basic_launch dbw_joystick.launch
-
-# To Create Pointcept Conda Environment
-conda env create -f pointcept151.yml -n pointcept151
-
-conda activate pointcept151
-python3 src/pointcept151/inference_ros_filter.py
-
-conda activate pointcept151
-python3 src/sequence_matching.py
-
-conda activate pointcept151
-python3 src/windowSearch_realtime.py
-
-roslaunch src/kiss-icp/ros/launch/odometry.launch topic:=/ouster/points
-
-python3 src/pointcept151/inference_ros_filter.py _model_type:=near_ir
-
+The video demonstrates:
+- Real-time lane detection using LiDAR point clouds
+- Buffered mapping system and waypoint generation
+- System performance in different lighting conditions
+- Autonomous navigation capabilities
