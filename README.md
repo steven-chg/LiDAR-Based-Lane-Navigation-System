@@ -1,6 +1,9 @@
-## First drive the car outside at the point away from the building, and remain static for
-## 30 s
-# Then initialize all the sensors
+
+### Start-Up Sequence
+
+# First drive the car outside at the point away from the building, and remain static for 30 seconds
+
+# Initialize All Sensors
 $ cd demo_ws
 $ source devel/setup.bash
 $ roslaunch basic_launch sensor_init.launch
@@ -9,12 +12,11 @@ $ roslaunch basic_launch sensor_init.launch
 $ source devel/setup.bash
 $ roslaunch basic_launch visualization.launch
 
-# Enable joystick control
+# Enable Joystick Control
 $ source devel/setup.bash
 $ roslaunch basic_launch dbw_joystick.launch
 
-
-# to create pointcept conda env
+# To Create Pointcept Conda Environment
 conda env create -f pointcept151.yml -n pointcept151
 
 conda activate pointcept151
